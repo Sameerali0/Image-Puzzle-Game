@@ -19,5 +19,14 @@ body{
 .img-pieces{
     margin-top: 25px;
     width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+    gap: 1px;
 
+}
+.piece{
+    background-size: 500px 500px;
+    border: 1px solid black;
 }
