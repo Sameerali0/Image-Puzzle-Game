@@ -3,3 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background-color: #6d6d6d;
+}
+
+
+.game-container{
+    text-align: center;
+}
+
+.img-pieces{
+    margin-top: 25px;
+    width: 500px;
+
+}
