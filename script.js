@@ -1,5 +1,6 @@
 const imageChoose = document.getElementById("choose-img")
 const imagePieces = document.getElementById("img-pieces")
+const solveImagePieces = document.getElementById("solve-img-pieces")
 
 imageChoose.addEventListener("change", (e) =>{
     const selectedFile = e.target.files[0]
@@ -19,6 +20,7 @@ imageChoose.addEventListener("change", (e) =>{
 
 function createImgPieces(imgSrc) {
     imagePieces.innerHTML=""
+    solveImagePieces.innerHTML=""
 
     const rowsAndColums= 4
     const imgSize = 500
@@ -33,12 +35,18 @@ function createImgPieces(imgSrc) {
                 piece.style.backgroundImage= `url(${imgSrc})`
                 piece.style.backgroundPosition = `-${col* imgPieceSize}px -${row* imgPieceSize}px`
 
-                // imagePieces.appendChild(piece)
                 pieces.push(piece)
                 
           }
       }
 
+      for (let i= 0; i < rowsAndColums* rowsAndColums; i++ ){
+        const solvePiece = document.createElement("div")
+        solvePiece.classList.add("solve-piece")
+
+        solveImagePieces.appendChild(solvePiece)
+
+      }
       piecesRandPos(pieces)
       pieces.forEach(piece => imagePieces.appendChild(piece))
 }
