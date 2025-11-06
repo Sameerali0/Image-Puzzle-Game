@@ -35,6 +35,7 @@ function createImgPieces(imgSrc) {
                 piece.style.backgroundImage= `url(${imgSrc})`
                 piece.style.backgroundPosition = `-${col* imgPieceSize}px -${row* imgPieceSize}px`
 
+                piece.setAttribute("draggable" , true)
                 pieces.push(piece)
                 
           }
@@ -49,6 +50,8 @@ function createImgPieces(imgSrc) {
       }
       piecesRandPos(pieces)
       pieces.forEach(piece => imagePieces.appendChild(piece))
+
+      piecesDragAndDrop()
 }
 
 
@@ -59,4 +62,37 @@ function piecesRandPos(blocks){
         [blocks[i] , blocks[j]] = [blocks[j], blocks[i]];
     }
 
+}
+
+function piecesDragAndDrop(){
+    const puzzlePieces= document.querySelectorAll(".piece")
+    const puzzleBlocks = document.querySelectorAll(".solve-piece")
+
+    puzzlePieces.forEach(piece =>{
+        
+        piece.addEventListener("dragstart" , () =>{
+            piece.classList.add("dragging")
+        })
+
+            piece.addEventListener("dragend" , () =>{
+                
+                piece.classList.remove("dragging")
+          })
+    })
+
+    puzzleBlocks.forEach(block =>{
+        block.addEventListener("dragover", (event) =>{
+            event.preventDefault()
+
+        })
+
+            block.addEventListener("drop" , () =>{
+                const draggedPiece = document.querySelector(".dragging")
+
+                if (draggedPiece && block.children.length === 0) {
+                    
+                    block.appendChild(draggedPiece)
+                }
+            })
+    })
 }
