@@ -47,8 +47,8 @@ function createImgPieces(imgSrc) {
 function piecesRandPos(blocks){
     
     for (let i= blocks.length - 1; i > 0; i--){
-        let j= Math.floor(Math.random()* (i + 1))
-        [blocks[i] , blocks[j]] = [blocks[j], blocks[i]]
+        let j= Math.floor(Math.random()* (i + 1));
+        [blocks[i] , blocks[j]] = [blocks[j], blocks[i]];
     }
 
 }
