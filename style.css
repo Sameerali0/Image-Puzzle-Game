@@ -41,3 +41,7 @@ body{
 .solve-piece{
     border: 1px solid black;
 }
+.solve-piece .piece{
+    width: 100%;
+    height: 100%;
+}
