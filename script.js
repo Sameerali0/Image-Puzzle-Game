@@ -28,6 +28,8 @@ function createImgPieces(imgSrc) {
 
     const pieces = []
 
+    let pieceNum = 0
+
       for (let row = 0; row < rowsAndColums; row++){
           for (let col= 0; col < rowsAndColums; col++ ){
                 const piece = document.createElement("div")
@@ -36,6 +38,8 @@ function createImgPieces(imgSrc) {
                 piece.style.backgroundPosition = `-${col* imgPieceSize}px -${row* imgPieceSize}px`
 
                 piece.setAttribute("draggable" , true)
+                piece.dataset.pieceNum = pieceNum++
+
                 pieces.push(piece)
                 
           }
@@ -45,6 +49,7 @@ function createImgPieces(imgSrc) {
         const solvePiece = document.createElement("div")
         solvePiece.classList.add("solve-piece")
 
+        solvePiece.dataset.pieceNum =i
         solveImagePieces.appendChild(solvePiece)
 
       }
@@ -92,7 +97,25 @@ function piecesDragAndDrop(){
                 if (draggedPiece && block.children.length === 0) {
                     
                     block.appendChild(draggedPiece)
+                    checkPuzzleComplete()
                 }
             })
     })
 }
+
+function checkPuzzleComplete(){
+    
+    const puzzleBlocks = document.querySelectorAll(".solve-piece")
+    for (let block of puzzleBlocks){
+        const piece = block.querySelector(".piece")
+
+        if (!piece || piece.dataset.pieceNum !== block.dataset.pieceNum) {
+            
+            return
+        }
+            
+        }
+
+        alert("puzzle solved")
+}
+
