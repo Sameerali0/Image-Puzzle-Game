@@ -5,6 +5,10 @@ const levelBtns = document.querySelectorAll(".level-btn")
 const levelBtnsDiv = document.getElementById("level-buttons")
 const grids = document.getElementById("grids")
 
+const backgroundMusic =new Audio("sounds/backgroundmusic.mp3")
+backgroundMusic.loop= true
+backgroundMusic.volume = 0.5
+
 let selectedImg= null
 let rowsAndColums = 3
 
@@ -20,6 +24,7 @@ imageChoose.addEventListener("change", (e) =>{
         selectedImg= event.target.result
         levelBtnsDiv.classList.remove("hide")
     
+        backgroundMusic.play()
     }
 
     fileReader.readAsDataURL(selectedFile)
