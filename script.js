@@ -83,6 +83,14 @@ function piecesDragAndDrop(){
                 
                 piece.classList.remove("dragging")
           })
+
+            piece.addEventListener("click", () =>{
+                const pieceBox = piece.parentElement
+                if(pieceBox.classList.contains("solve-piece")){
+                        
+                        imagePieces.appendChild(piece)
+                    }
+          })
     })
 
     puzzleBlocks.forEach(block =>{
