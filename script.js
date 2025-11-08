@@ -2,6 +2,8 @@ const imageChoose = document.getElementById("choose-img")
 const imagePieces = document.getElementById("img-pieces")
 const solveImagePieces = document.getElementById("solve-img-pieces")
 const levelBtns = document.querySelectorAll(".level-btn")
+const levelBtnsDiv = document.getElementById("level-buttons")
+const grids = document.getElementById("grids")
 
 let selectedImg= null
 let rowsAndColums = 3
@@ -16,7 +18,8 @@ imageChoose.addEventListener("change", (e) =>{
     const fileReader = new FileReader()
     fileReader.onload = (event) =>{
         selectedImg= event.target.result
-
+        levelBtnsDiv.classList.remove("hide")
+    
         createImgPieces(selectedImg, rowsAndColums)
     }
 
@@ -35,6 +38,8 @@ levelBtns.forEach(btn =>{
         btn.classList.add("active")
     
         rowsAndColums = parseInt(btn.dataset.size)
+        grids.classList.remove("hide")
+        
         createImgPieces(selectedImg, rowsAndColums)
     })
 })
