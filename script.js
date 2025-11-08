@@ -20,7 +20,6 @@ imageChoose.addEventListener("change", (e) =>{
         selectedImg= event.target.result
         levelBtnsDiv.classList.remove("hide")
     
-        createImgPieces(selectedImg, rowsAndColums)
     }
 
     fileReader.readAsDataURL(selectedFile)
@@ -29,11 +28,6 @@ imageChoose.addEventListener("change", (e) =>{
 levelBtns.forEach(btn =>{
     btn.addEventListener("click", () =>{
 
-        if(!selectedImg){
-            alert("please select an image first")
-            
-            return
-        }
         levelBtns.forEach(button => button.classList.remove("active"))
         btn.classList.add("active")
     
