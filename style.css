@@ -29,17 +29,17 @@ body{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(4,1fr);
-    gap: 1px;
+    gap: 0;
     border: 2px solid black;
 
 }
 .piece{
     background-size: 500px 500px;
-    border: 1px solid black;
+    border: none;
 }
 
 .solve-piece{
-    border: 1px solid black;
+    border: 0.1px solid black;
 }
 .solve-piece .piece{
     width: 100%;
