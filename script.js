@@ -1,7 +1,13 @@
 const imageChoose = document.getElementById("choose-img")
 const imagePieces = document.getElementById("img-pieces")
 const solveImagePieces = document.getElementById("solve-img-pieces")
+const levelBtns = document.querySelectorAll(".level-btn")
 
+levelBtns.forEach(btn =>{
+    btn.addEventListener("click", () =>{
+        levelBtns.forEach(button => button.classList.remove("active"))
+    })
+})
 imageChoose.addEventListener("change", (e) =>{
     const selectedFile = e.target.files[0]
     
