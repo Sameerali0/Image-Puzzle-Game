@@ -3,11 +3,9 @@ const imagePieces = document.getElementById("img-pieces")
 const solveImagePieces = document.getElementById("solve-img-pieces")
 const levelBtns = document.querySelectorAll(".level-btn")
 
-levelBtns.forEach(btn =>{
-    btn.addEventListener("click", () =>{
-        levelBtns.forEach(button => button.classList.remove("active"))
-    })
-})
+let selectedImg= null
+let rowsAndColums = 3
+
 imageChoose.addEventListener("change", (e) =>{
     const selectedFile = e.target.files[0]
     
@@ -17,18 +15,34 @@ imageChoose.addEventListener("change", (e) =>{
 
     const fileReader = new FileReader()
     fileReader.onload = (event) =>{
-        const imgSrc= event.target.result
-        createImgPieces(imgSrc)
+        selectedImg= event.target.result
+
+        createImgPieces(selectedImg, rowsAndColums)
     }
 
     fileReader.readAsDataURL(selectedFile)
 })
 
-function createImgPieces(imgSrc) {
+levelBtns.forEach(btn =>{
+    btn.addEventListener("click", () =>{
+
+        if(!selectedImg){
+            alert("please select an image first")
+            
+            return
+        }
+        levelBtns.forEach(button => button.classList.remove("active"))
+        btn.classList.add("active")
+    
+        rowsAndColums = parseInt(btn.dataset.size)
+        createImgPieces(selectedImg, rowsAndColums)
+    })
+})
+
+function createImgPieces(imgSrc, rowsAndColums) {
     imagePieces.innerHTML=""
     solveImagePieces.innerHTML=""
 
-    const rowsAndColums= 4
     const imgSize = 500
     const imgPieceSize = imgSize / rowsAndColums
 
@@ -61,6 +75,12 @@ function createImgPieces(imgSrc) {
       }
       piecesRandPos(pieces)
       pieces.forEach(piece => imagePieces.appendChild(piece))
+
+      imagePieces.style.gridTemplateColumns = `repeat(${rowsAndColums}, 1fr)`
+      imagePieces.style.gridTemplateRows = `repeat(${rowsAndColums}, 1fr)`
+
+      solveImagePieces.style.gridTemplateColumns = `repeat(${rowsAndColums}, 1fr)`
+      solveImagePieces.style.gridTemplateRows = `repeat(${rowsAndColums}, 1fr)`
 
       piecesDragAndDrop()
 }
