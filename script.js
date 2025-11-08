@@ -152,6 +152,14 @@ function checkPuzzleComplete(){
             
         }
 
-        alert("puzzle solved")
+    showSuccessMsg()
 }
 
+function showSuccessMsg() {
+    const successMsg= document.createElement("div")
+    successMsg.classList.add("success-message")
+    successMsg.innerHTML = "Puzzle Solved"
+
+    document.body.appendChild(successMsg)
+
+}
