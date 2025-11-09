@@ -39,7 +39,7 @@ levelBtns.forEach(btn =>{
         rowsAndColums = parseInt(btn.dataset.size)
         grids.classList.remove("hide")
         
-        imageChoose.classList.add("hide")
+        document.querySelector(".choose-image").classList.add("hide")
         levelBtnsDiv.classList.add("hide")
 
         createImgPieces(selectedImg, rowsAndColums)
