@@ -172,3 +172,8 @@ function showSuccessMsg() {
     document.body.appendChild(successMsg)
 
 }
+
+previewImg.addEventListener("click", () =>{
+
+    previewImg.classList.toggle("zoom")
+})
