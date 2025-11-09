@@ -6,6 +6,8 @@ const levelBtnsDiv = document.getElementById("level-buttons")
 const grids = document.getElementById("grids")
 const previewDiv =document.getElementById("preview-container")
 const previewImg = document.getElementById("preview-img")
+const timer = document.getElementById("timer")
+const time = document.getElementById("time")
 
 const backgroundMusic =new Audio("sounds/backgroundmusic.mp3")
 backgroundMusic.loop= true
@@ -13,6 +15,7 @@ backgroundMusic.volume = 0.5
 
 let selectedImg= null
 let rowsAndColums = 3
+let timeLeft = 0
 
 imageChoose.addEventListener("change", (e) =>{
     const selectedFile = e.target.files[0]
@@ -148,6 +151,15 @@ function piecesDragAndDrop(){
                 }
             })
     })
+}
+
+function levelTimer(level){
+    if(level == 3) timeLeft = 60
+    else if (level == 4) timeLeft = 90
+    else if (level == 5) timeLeft= 150
+
+
+
 }
 
 function checkPuzzleComplete(){
