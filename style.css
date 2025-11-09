@@ -8,7 +8,8 @@ body{
     display: flex;
     justify-content: center;
     font-family: Arial, sans-serif;
-    background-color: #6d6d6d;
+    background-color: black;
+    color: white;
 }
 
 
@@ -17,16 +18,28 @@ body{
 }
 
 h1{
-    margin-bottom: 15px;
+    margin-top: 20px;
     color: white;
+    font-size: 3rem;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.choose-image{
+    margin-top: 40%;
+}
+
+.label{
+    background: #ff0000;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 20px;
+    cursor: pointer;
 
 }
 
-
 input[type="file"]{
-
-    margin-bottom: 20px;
-    cursor: pointer;
+    display: none;
 }
 
 .grids{
