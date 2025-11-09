@@ -46,6 +46,8 @@ levelBtns.forEach(btn =>{
         document.querySelector(".choose-image").classList.add("hide")
         levelBtnsDiv.classList.add("hide")
 
+        previewDiv.classList.add("fixed")
+
         createImgPieces(selectedImg, rowsAndColums)
     })
 })
