@@ -15,6 +15,7 @@ backgroundMusic.volume = 0.5
 
 let selectedImg= null
 let rowsAndColums = 3
+let timerLoop
 let timeLeft = 0
 
 imageChoose.addEventListener("change", (e) =>{
@@ -52,6 +53,7 @@ levelBtns.forEach(btn =>{
         previewDiv.classList.add("fixed")
 
         createImgPieces(selectedImg, rowsAndColums)
+        levelTimer(btn.dataset.size)
     })
 })
 
@@ -158,8 +160,40 @@ function levelTimer(level){
     else if (level == 4) timeLeft = 90
     else if (level == 5) timeLeft= 150
 
+    timer.classList.remove("hide")
+
+    updateTimeDisplay()
+
+    timerLoop = setInterval(() =>{
+
+        timeLeft--
+        updateTimeDisplay()
+
+        if(timeLeft <= 0){
+
+            clearInterval(timerLoop)
+            showTimeOverMsg()
+
+        }
+
+    }, 1000)
 
 
+}
+
+function updateTimeDisplay(){
+
+    let minutes = Math.floor(timeLeft / 60)
+    let seconds= timeLeft % 60
+    time.textContent= `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
+
+
+}
+
+
+function showTimeOverMsg(){
+
+    
 }
 
 function checkPuzzleComplete(){
