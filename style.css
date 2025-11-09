@@ -148,3 +148,10 @@ input[type="file"]{
     margin-top: 8px;
 
 }
+
+#timer{
+    padding-left: 80%;
+    font-size: 23px;
+    color: #ffbb00;
+    font-weight: bold;
+}

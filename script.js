@@ -156,6 +156,8 @@ function piecesDragAndDrop(){
 }
 
 function levelTimer(level){
+    clearInterval(timerLoop)
+
     if(level == 3) timeLeft = 60
     else if (level == 4) timeLeft = 90
     else if (level == 5) timeLeft= 150
@@ -192,8 +194,12 @@ function updateTimeDisplay(){
 
 
 function showTimeOverMsg(){
+    const timeOverMsg = document.createElement("div")
+    timeOverMsg.classList.add("success-message")
+    timeOverMsg.style.background = "#ff0000"
+    timeOverMsg.innerHTML = "Time Over!"
+    document.body.appendChild(timeOverMsg)
 
-    
 }
 
 function checkPuzzleComplete(){
@@ -213,6 +219,7 @@ function checkPuzzleComplete(){
 }
 
 function showSuccessMsg() {
+    clearInterval(timerLoop)
     const successMsg= document.createElement("div")
     successMsg.classList.add("success-message")
     successMsg.innerHTML = "Puzzle Solved"
