@@ -4,6 +4,8 @@ const solveImagePieces = document.getElementById("solve-img-pieces")
 const levelBtns = document.querySelectorAll(".level-btn")
 const levelBtnsDiv = document.getElementById("level-buttons")
 const grids = document.getElementById("grids")
+const previewDiv =document.getElementById("preview-container")
+const previewImg = document.getElementById("preview-img")
 
 const backgroundMusic =new Audio("sounds/backgroundmusic.mp3")
 backgroundMusic.loop= true
@@ -22,6 +24,8 @@ imageChoose.addEventListener("change", (e) =>{
     const fileReader = new FileReader()
     fileReader.onload = (event) =>{
         selectedImg= event.target.result
+        previewImg.src = selectedImg
+        previewDiv.classList.remove("hide")
         levelBtnsDiv.classList.remove("hide")
     
         backgroundMusic.play()
