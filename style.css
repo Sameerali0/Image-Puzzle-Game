@@ -137,7 +137,14 @@ input[type="file"]{
 .preview-container.fixed{
 
     position: fixed;
-    top: 35px;
-    left: 50px;
+    top: 15px;
+    left: 15px;
     margin-top: 0;
+}
+
+.zoom-hint{
+    font-size: 15px;
+    color: #ffbb00;
+    margin-top: 8px;
+
 }
