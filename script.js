@@ -8,6 +8,10 @@ const previewDiv =document.getElementById("preview-container")
 const previewImg = document.getElementById("preview-img")
 const timer = document.getElementById("timer")
 const time = document.getElementById("time")
+const messageDiv = document.getElementById("message-container")
+const messageText= document.getElementById("message-text")
+const tryAgainBtn =document.getElementById("tryAgain-btn")
+const playAgainBtn = document.getElementById("playAgain-btn")
 
 const backgroundMusic =new Audio("sounds/backgroundmusic.mp3")
 backgroundMusic.loop= true
