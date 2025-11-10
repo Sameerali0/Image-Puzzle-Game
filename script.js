@@ -253,6 +253,7 @@ function resetGame(){
     document.querySelector(".choose-image").classList.remove("hide")
     levelBtnsDiv.classList.add("hide")
     
+    previewDiv.classList.remove("fixed")
     previewDiv.classList.add("hide")
     previewImg.classList.remove("zoom")
 
