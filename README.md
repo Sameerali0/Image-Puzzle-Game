@@ -6,3 +6,6 @@ This is an Image Puzzle Game where you can choose any image you like. After sele
 - HTML
 - CSS
 - JavaScript
+
+## Screenshot
+![Image Puzzle Game Screenshot](images/gameScreenshot.png)
