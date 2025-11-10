@@ -198,11 +198,14 @@ function updateTimeDisplay(){
 
 
 function showTimeOverMsg(){
-    const timeOverMsg = document.createElement("div")
-    timeOverMsg.classList.add("success-message")
-    timeOverMsg.style.background = "#ff0000"
-    timeOverMsg.innerHTML = "Time Over!"
-    document.body.appendChild(timeOverMsg)
+    clearInterval(timerLoop)
+    
+    messageText.textContent="Time Over!"
+    tryAgainBtn.classList.remove("hide")
+    playAgainBtn.classList.add("hide")
+    messageDiv.classList.remove("hide")
+
+     tryAgainBtn.onclick= () => resetGame()
 
 }
 
@@ -224,15 +227,36 @@ function checkPuzzleComplete(){
 
 function showSuccessMsg() {
     clearInterval(timerLoop)
-    const successMsg= document.createElement("div")
-    successMsg.classList.add("success-message")
-    successMsg.innerHTML = "Puzzle Solved"
 
-    document.body.appendChild(successMsg)
+    messageText.textContent = "Puzzle Solved!"
+    playAgainBtn.classList.remove("hide")
+    tryAgainBtn.classList.add("hide")
+    messageDiv.classList.remove("hide")
 
+     playAgainBtn.onclick= () => resetGame()
 }
 
 previewImg.addEventListener("click", () =>{
 
     previewImg.classList.toggle("zoom")
 })
+
+function resetGame(){
+    
+    grids.classList.add("hide")
+
+    messageDiv.classList.add("hide")
+
+    imagePieces.innerHTML = ""
+    solveImagePieces.innerHTML=""
+
+    document.querySelector(".choose-image").classList.remove("hide")
+    levelBtnsDiv.classList.add("hide")
+    
+    previewDiv.classList.add("hide")
+    previewImg.classList.remove("zoom")
+
+    clearInterval(timerLoop)
+    time.textContent= "00:00"
+    timer.classList.add("hide")
+}
