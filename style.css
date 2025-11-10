@@ -155,3 +155,36 @@ input[type="file"]{
     color: #ffbb00;
     font-weight: bold;
 }
+
+#message-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.85); 
+    padding: 40px 60px;
+    border-radius: 18px;
+    font-size: 38px;
+    color: #ffbb00;     
+
+}
+
+
+#message-text{
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 187, 0, 0.8);
+    margin-bottom: 20px;
+
+}
+
+#message-container .btn{
+
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #f70000;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+    font-size: 22px;
+}
