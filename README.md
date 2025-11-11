@@ -2,9 +2,9 @@
 
 I created a project called Image Puzzle Game.In this game first you choose any image you like and then select a difficulty easy, medium and hard.
 
-Easy 3x3 grid 1 min timer
-Medium 4x4 grid 1 min 30 sec timer
-Hard 5x5 grid 2 min 30 sec timer
+- Easy 3x3 grid 1 min timer
+- Medium 4x4 grid 1 min 30 sec timer
+- Hard 5x5 grid 2 min 30 sec timer
 
 After selecting the difficulty image turn into pieces and then you drag the piece and drop into solved grid to remake the image by placing all the peices in the correct place.
 
