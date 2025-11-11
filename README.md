@@ -1,11 +1,20 @@
 # Image Puzzle Game
 
-This is an Image Puzzle Game where you can choose any image you like. After selecting an image, you can choose a level Easy, Medium, or Hard. The Easy level is a 3x3 puzzle with a 1-minute timer, the Medium level is 4x4 with a 1 minute 30 seconds timer, and the Hard level is 5x5 with a 2 minute 30 seconds timer. You have to complete the puzzle within the given time, or the time will run out. To help you while solving, a preview image is also provided for reference.
+I created a project called Image Puzzle Game.In this game first you choose any image you like and then select a difficulty easy, medium and hard.
 
-# My opinion about choosing an image:
-I suggest selecting an image that doesn’t have too many areas of the same color. When an image has large sections of a single color, the puzzle pieces look too similar, making it harder to place them in the correct position.
+Easy 3x3 grid 1 min timer
+Medium 4x4 grid 1 min 30 sec timer
+Hard 5x5 grid 2 min 30 sec timer
 
-## Technologies Used
+After selecting the difficulty image turn into pieces and then you drag the piece and drop into solved grid to remake the image by placing all the peices in the correct place.
+
+# opinion on choosing image
+
+When i was playing the game then i realized that in medium and hard levels the puzzle pieces become smaller. if the image has a lot of the same color  then many pieces look same making it difficult to place them in correct position.
+
+So in my opinion it is better to choose image that does not have large areas of the same color.
+
+## Built with
 - HTML
 - CSS
 - JavaScript
